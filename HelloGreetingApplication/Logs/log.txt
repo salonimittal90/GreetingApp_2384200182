@@ -1,0 +1,15 @@
+2025-03-04 00:45:57.9442 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7188 
+2025-03-04 00:45:58.0193 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5018 
+2025-03-04 00:45:58.0308 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2025-03-04 00:45:58.0308 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2025-03-04 00:45:58.0308 | INFO | Microsoft.Hosting.Lifetime | Content root path: C:\Users\lenovo\source\repos\HelloGreetingApplication\HelloGreetingApplication\ 
+2025-03-04 00:45:59.8485 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.html - - 
+2025-03-04 00:46:00.4548 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.html - - - 200 - text/html;charset=utf-8 613.9502ms 
+2025-03-04 00:46:00.4724 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.js - - 
+2025-03-04 00:46:00.4724 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_vs/browserLink - - 
+2025-03-04 00:46:00.4724 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-04 00:46:00.5036 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.js - - - 200 - application/javascript;charset=utf-8 32.8670ms 
+2025-03-04 00:46:00.5226 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - - 200 12005 application/javascript;+charset=utf-8 49.7887ms 
+2025-03-04 00:46:00.6595 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 186.7353ms 
+2025-03-04 00:46:00.9311 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - 
+2025-03-04 00:46:01.5694 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 638.3333ms 
