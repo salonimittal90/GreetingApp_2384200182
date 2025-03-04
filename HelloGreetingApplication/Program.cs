@@ -1,5 +1,6 @@
 using BusinessLayer.Interface;
 using BusinessLayer.Service;
+using NLog;
 using NLog.Web;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,9 +12,16 @@ builder.Services.AddScoped<IGreetingBL, GreetingBL>();
 
 builder.Services.AddControllers();
 
-// NLog is a .Net logging Library h jo  logs generate karne ke liye use hoti hai.
+
+var logger = LogManager.Setup()
+    .LoadConfigurationFromFile(Path.Combine(Directory.GetCurrentDirectory(), "NLog.config"))
+    .GetCurrentClassLogger();
+
+
+// NLog is a.Net logging Library h jo  logs generate karne ke liye use hoti hai.
 // Configure NLog
 builder.Host.UseNLog();
+
 
 
 //Add swagger to container
