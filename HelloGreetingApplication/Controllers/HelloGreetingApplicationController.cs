@@ -1,3 +1,4 @@
+using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
@@ -5,6 +6,8 @@ using NLog;
 
 
 namespace HelloGreetingApplication.Controllers;
+
+
 
 /// <summary>
 /// Class providing API for HelloGreetingg
@@ -14,9 +17,26 @@ namespace HelloGreetingApplication.Controllers;
 [Route("[controller]")]
 public class HelloGreetingApplicationController : ControllerBase
 {
+
+    private readonly IGreetingBL _greetingBL;
+
+    public HelloGreetingApplicationController(IGreetingBL greetingBL)
+    {
+        _greetingBL = greetingBL;
+    }
+
+    [HttpGet("custom")]
+    public IActionResult GetGreeting()
+    {
+        string result = _greetingBL.GetGreeting();
+        return Ok(result);
+    }
+
+
+
     private readonly Logger logger = LogManager.GetCurrentClassLogger();
     /// <summary>
-    /// Get method to get the Greeting message
+    /// Get method to get the  message
     /// </summary>
     /// <returns>"Hello, World!</returns>
 
@@ -83,5 +103,7 @@ public class HelloGreetingApplicationController : ControllerBase
         logger.Info("Delete method called successfully!");
         return Ok(responseModel);
     }
+
+
 
 }

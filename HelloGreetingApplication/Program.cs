@@ -1,6 +1,11 @@
+using BusinessLayer.Interface;
+using BusinessLayer.Service;
 using NLog.Web;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Register BL services or IGreetingBL ka refference inject krdiya
+builder.Services.AddScoped<IGreetingBL, GreetingBL>();
 
 // Add services to the container.
 
