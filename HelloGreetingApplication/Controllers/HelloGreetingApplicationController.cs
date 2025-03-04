@@ -4,10 +4,7 @@ using ModelLayer.Model;
 using NLog;
 
 
-
 namespace HelloGreetingApplication.Controllers;
-
-
 
 /// <summary>
 /// Class providing API for HelloGreetingg
@@ -18,7 +15,9 @@ namespace HelloGreetingApplication.Controllers;
 public class HelloGreetingApplicationController : ControllerBase
 {
 
-    private readonly IGreetingBL _greetingBL;
+    private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+
+    IGreetingBL _greetingBL;
 
     public HelloGreetingApplicationController(IGreetingBL greetingBL)
     {
@@ -26,29 +25,30 @@ public class HelloGreetingApplicationController : ControllerBase
     }
 
     [HttpGet("custom")]
-    public IActionResult GetGreeting()
+    public IActionResult GreetingMessage(string? firstName, string? lastName)
     {
-        string result = _greetingBL.GetGreeting();
-        return Ok(result);
+        string result = _greetingBL.GetGreeting(firstName, lastName);
+        ResponseModel<string> responseModel = new ResponseModel<string>();
+        responseModel.Success = true;
+        responseModel.Message = "Greeting Message Executed";
+        responseModel.Data = result;
+        logger.Info($"Greeting fetched {result}");
+        return Ok(responseModel);
     }
 
-
-
-    private readonly Logger logger = LogManager.GetCurrentClassLogger();
     /// <summary>
-    /// Get method to get the  message
+    /// Get method to get the Greeting message
     /// </summary>
     /// <returns>"Hello, World!</returns>
 
     [HttpGet]
     public IActionResult Get()
     {
-
         ResponseModel<string> responseModel = new ResponseModel<string>();
         responseModel.Success = true;
         responseModel.Message = "Hello to Greeting App API Endpoint";
         responseModel.Data = "Hello World!";
-        logger.Info("Get method called successfully!");
+        logger.Info("Get method executed");
         return Ok(responseModel);
 
     }
@@ -60,7 +60,7 @@ public class HelloGreetingApplicationController : ControllerBase
         responseModel.Success = true;
         responseModel.Message = "Request received successfully";
         responseModel.Data = $"Key: {requestModel.key}, Value: {requestModel.value}";
-        logger.Info("Post method called successfully!");
+        logger.Info("Post method executed");
         return Ok(responseModel);
 
     }
@@ -77,7 +77,7 @@ public class HelloGreetingApplicationController : ControllerBase
         responseModel.Success = true;
         responseModel.Message = "Data updated successfully";
         responseModel.Data = $"Updated Key: {requestModel.key}, Updated Value: {requestModel.value}";
-        logger.Info("Put method called successfully!");
+        logger.Info("Post method executed");
         return Ok(responseModel);
     }
 
@@ -89,7 +89,7 @@ public class HelloGreetingApplicationController : ControllerBase
         responseModel.Success = true;
         responseModel.Message = "Data patched successfully";
         responseModel.Data = $"Patched Key: {requestModel.key}, Patched Value: {requestModel.value}";
-        logger.Info("Patch method called successfully!");
+        logger.Info("Patch method executed");
         return Ok(responseModel);
     }
 
@@ -100,10 +100,8 @@ public class HelloGreetingApplicationController : ControllerBase
         responseModel.Success = true;
         responseModel.Message = "Data deleted successfully";
         responseModel.Data = $"Deleted Key: {requestModel.key}";
-        logger.Info("Delete method called successfully!");
+        logger.Info("Deleted method executed");
         return Ok(responseModel);
     }
-
-
 
 }
