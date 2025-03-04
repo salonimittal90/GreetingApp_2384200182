@@ -3,12 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
 
-
-
 namespace HelloGreetingApplication.Controllers;
-
-
-
 /// <summary>
 /// Class providing API for HelloGreetingg
 /// </summary>
@@ -17,24 +12,34 @@ namespace HelloGreetingApplication.Controllers;
 [Route("[controller]")]
 public class HelloGreetingApplicationController : ControllerBase
 {
+    // create the instance of logger and return the current class logger
+    private static readonly Logger logger = LogManager.GetCurrentClassLogger();
 
+    // create the reference of Interface
     private readonly IGreetingBL _greetingBL;
 
     public HelloGreetingApplicationController(IGreetingBL greetingBL)
     {
+
         _greetingBL = greetingBL;
+       
     }
 
     [HttpGet("custom")]
-    public IActionResult GetGreeting()
+    public IActionResult GetGreeting(string? firstName, string? lastName)
     {
-        string result = _greetingBL.GetGreeting();
-        return Ok(result);
+        string result = _greetingBL.GetGreeting(firstName, lastName);
+        ResponseModel<string> responseModel = new ResponseModel<string>();
+        responseModel.Success = true;
+        responseModel.Message = "Greeting fetched sucessfully";
+        responseModel.Data = result;
+        logger.Info("Greeting fetched " + result);
+        return Ok(responseModel);
     }
 
 
 
-    private readonly Logger logger = LogManager.GetCurrentClassLogger();
+   
     /// <summary>
     /// Get method to get the  message
     /// </summary>
