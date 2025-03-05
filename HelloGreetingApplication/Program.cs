@@ -1,4 +1,3 @@
-
 using BusinessLayer.Interface;
 using BusinessLayer.Service;
 using RepositoryLayer.Interface;
@@ -20,7 +19,7 @@ builder.Services.AddScoped<IGreetingRL, GreetingRL>();
 builder.Services.AddControllers();
 
 //logger refference Add kiya and GetCurrentClassLogger isse current class ka logger set kiya 
-var logger = LogManager.Setup()
+var logger = LogManager.Setup() 
     .LoadConfigurationFromFile(Path.Combine(Directory.GetCurrentDirectory(), "NLog.config"))
     .GetCurrentClassLogger();
 

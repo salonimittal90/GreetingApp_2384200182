@@ -1,4 +1,3 @@
-
 2025-03-05 11:20:51.9209 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
 2025-03-05 11:22:44.5077 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
 2025-03-05 11:22:46.0167 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (316ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
