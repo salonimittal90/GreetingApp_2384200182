@@ -22,6 +22,25 @@ public class HelloGreetingApplicationController : ControllerBase
         _greetingBL = greetingBL;
     }
 
+
+
+    [HttpDelete("DeleteGreeting/{id}")]
+    public IActionResult DeleteGreeting(int id)
+    {
+        var isDeleted = _greetingBL.DeleteGreeting(id);
+
+        if (!isDeleted)
+        {
+            return NotFound(new { Success = false, Message = "Greeting not found!" });
+        }
+        logger.Info("Greeting Deleted Successfully");
+        return Ok(new
+        {
+            Success = true,
+            Message = "Greeting deleted successfully!"
+        });
+    }
+
     [HttpPut("UpdateGreeting")]
     public IActionResult UpdateGreeting(int id, string newMessage)
     {
