@@ -152,3 +152,36 @@ WHERE [g].[Id] = @__id_0
 2025-03-05 12:45:58.1532 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.HelloGreetingApplicationController.GetGreetingById (HelloGreetingApplication) in 2120.3759ms 
 2025-03-05 12:45:58.1532 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingApplicationController.GetGreetingById (HelloGreetingApplication)' 
 2025-03-05 12:45:58.1643 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/HelloGreetingApplication/FindGreeting?id=1 - - - 200 - application/json;+charset=utf-8 2184.1241ms 
+2025-03-05 15:45:27.8909 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7188 
+2025-03-05 15:45:27.9388 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5018 
+2025-03-05 15:45:27.9388 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2025-03-05 15:45:27.9388 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2025-03-05 15:45:27.9539 | INFO | Microsoft.Hosting.Lifetime | Content root path: D:\CGProject\GreetingApp_2384200182\HelloGreetingApplication\ 
+2025-03-05 15:45:29.5992 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.html - - 
+2025-03-05 15:45:30.8956 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.html - - - 200 - text/html;charset=utf-8 1299.9268ms 
+2025-03-05 15:45:30.9492 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_vs/browserLink - - 
+2025-03-05 15:45:30.9492 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.js - - 
+2025-03-05 15:45:30.9492 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-05 15:45:30.9492 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.js - - - 200 - application/javascript;charset=utf-8 2.2919ms 
+2025-03-05 15:45:30.9623 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - - 200 12006 application/javascript;+charset=utf-8 13.0817ms 
+2025-03-05 15:45:31.0406 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 91.4129ms 
+2025-03-05 15:45:31.1752 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - 
+2025-03-05 15:45:31.4676 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 292.2637ms 
+2025-03-05 15:46:42.7430 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 PUT https://localhost:7188/HelloGreetingApplication/UpdateGreeting?id=3&newMessage=goodnight - 0 
+2025-03-05 15:46:42.7556 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingApplicationController.UpdateGreeting (HelloGreetingApplication)' 
+2025-03-05 15:46:42.7967 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "UpdateGreeting", controller = "HelloGreetingApplication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateGreeting(Int32, System.String) on controller HelloGreetingApplication.Controllers.HelloGreetingApplicationController (HelloGreetingApplication). 
+2025-03-05 15:46:44.8349 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-05 15:46:47.1696 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (175ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Message]
+FROM [Greetings] AS [g]
+WHERE [g].[Id] = @__id_0 
+2025-03-05 15:46:47.4582 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (23ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Greetings] SET [Message] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT; 
+2025-03-05 15:46:47.4980 | INFO | HelloGreetingApplication.Controllers.HelloGreetingApplicationController | Greeting Updated Successfully 
+2025-03-05 15:46:47.5173 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[RepositoryLayer.Entity.UserEntity, RepositoryLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-03-05 15:46:47.5621 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.HelloGreetingApplicationController.UpdateGreeting (HelloGreetingApplication) in 4751.9194ms 
+2025-03-05 15:46:47.5621 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingApplicationController.UpdateGreeting (HelloGreetingApplication)' 
+2025-03-05 15:46:47.5884 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 PUT https://localhost:7188/HelloGreetingApplication/UpdateGreeting?id=3&newMessage=goodnight - 0 - 200 - application/json;+charset=utf-8 4845.4646ms 

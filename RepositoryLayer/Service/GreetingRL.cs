@@ -41,6 +41,20 @@ namespace RepositoryLayer.Service
         }
 
 
+        public UserEntity UpdateGreeting(int id, string newMessage)
+        {
+            var greeting = _dbContext.Greetings.FirstOrDefault(g => g.Id == id);
+
+            if (greeting != null)
+            {
+                greeting.Message = newMessage; 
+                _dbContext.SaveChanges(); 
+                return greeting; 
+            }
+
+            return null; 
+        }
+
 
     }
 }
