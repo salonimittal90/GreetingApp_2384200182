@@ -26,15 +26,17 @@ namespace BusinessLayer.Service
         }
 
         public UserEntity SaveGreetings(string message)
-            {
+        {
                 var result = _greetingRL.SaveGreetings(message);
                 return result;
-            }
+        }
 
+        public List<UserEntity> GetAllGreetings()
+        {
+            return _greetingRL.GetAllGreetings();
+        }
 
-
-        
-            public string GetGreeting(string? firstName, string? lastName)
+        public string GetGreeting(string? firstName, string? lastName)
             {
 
                 if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
