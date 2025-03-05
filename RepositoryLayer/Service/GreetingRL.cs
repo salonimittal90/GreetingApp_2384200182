@@ -14,10 +14,14 @@ namespace RepositoryLayer.Service
     {
         HelloGreetingContext _dbContext;
 
+
         public GreetingRL(HelloGreetingContext dbContext)
         {
             _dbContext = dbContext;
         }
+
+        
+
         public UserEntity SaveGreetings(string message)
         {
             var greeting = new UserEntity { Message = message };
@@ -29,6 +33,11 @@ namespace RepositoryLayer.Service
         public UserEntity GetGreetingById(int id)
         {
             return _dbContext.Greetings.FirstOrDefault(g => g.Id == id);
+        }
+
+        public List<UserEntity> GetAllGreetings()
+        {
+            return _dbContext.Greetings.ToList();
         }
 
 

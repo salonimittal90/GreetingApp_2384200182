@@ -11,5 +11,7 @@ namespace RepositoryLayer.Interface
     {
         public UserEntity SaveGreetings(string message);
        public  UserEntity GetGreetingById(int id);
+
+        public List<UserEntity> GetAllGreetings();
     }
 }

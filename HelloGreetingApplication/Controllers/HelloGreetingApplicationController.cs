@@ -23,6 +23,24 @@ public class HelloGreetingApplicationController : ControllerBase
     }
 
 
+    [HttpGet("ShowGreeting")] 
+        public IActionResult GetAllGreetings()
+        {
+            
+                var result = _greetingBL.GetAllGreetings();
+            if(result == null  || result.Count ==0)
+            {
+            return NotFound("No greetings Found");
+
+            }
+            ResponseModel<List<UserEntity>> responseModel = new ResponseModel<List<UserEntity>>();
+            responseModel.Success = true;
+            responseModel.Message = "Greeting fetched Successfully";
+            responseModel.Data = result;
+            logger.Info("Display all ddata");
+            return Ok(responseModel);
+        }
+
     [HttpGet("FindGreeting")]
 
     public IActionResult GetGreetingById(int id)
@@ -56,7 +74,6 @@ public class HelloGreetingApplicationController : ControllerBase
 
         }
 
-
         [HttpGet("GreetingMessage")]
         public IActionResult GetGreeting(string? firstName, string? lastName)
         {
@@ -68,6 +85,7 @@ public class HelloGreetingApplicationController : ControllerBase
             logger.Info($"Greeting fetched {result}");
             return Ok(responseModel);
         }
+
 
         /// <summary>
         /// Get method to get the Greeting message
