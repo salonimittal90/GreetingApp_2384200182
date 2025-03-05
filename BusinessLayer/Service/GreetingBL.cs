@@ -4,11 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Interface;
+using RepositoryLayer.Entity;
+using RepositoryLayer.Interface;
 
 namespace BusinessLayer.Service
 {
     public class GreetingBL : IGreetingBL
     {
+        IGreetingRL _greetingRL;
+
+        public GreetingBL(IGreetingRL greetingRL)
+        {
+            _greetingRL = greetingRL;
+        }
+
+        public UserEntity SaveGreetings(string message)
+        {
+            var result = _greetingRL.SaveGreetings(message);
+            return result;
+        }
+
+
+
         public string GetGreeting(string? firstName, string? lastName)
         {
             if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))

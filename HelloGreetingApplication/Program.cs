@@ -1,21 +1,35 @@
 using BusinessLayer.Interface;
 using BusinessLayer.Service;
+using RepositoryLayer.Interface;
+using RepositoryLayer.Service;
 using NLog;
 using NLog.Web;
+using Microsoft.EntityFrameworkCore;
+using RepositoryLayer.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
 //Register BL services or IGreetingBL ka refference inject krdiya
+//isko depedency injection
 builder.Services.AddScoped<IGreetingBL, GreetingBL>();
+builder.Services.AddScoped<IGreetingRL, GreetingRL>();
 
 // Add services to the container.
 
 builder.Services.AddControllers();
 
-
-var logger = LogManager.Setup()
+//logger refference Add kiya and GetCurrentClassLogger isse current class ka logger set kiya 
+var logger = LogManager.Setup() 
     .LoadConfigurationFromFile(Path.Combine(Directory.GetCurrentDirectory(), "NLog.config"))
     .GetCurrentClassLogger();
+
+
+// sql connection string 
+var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
+
+builder.Services.AddDbContext<HelloGreetingContext>(options =>
+    options.UseSqlServer(connectionString));
+
 
 
 // NLog is a.Net logging Library h jo  logs generate karne ke liye use hoti hai.

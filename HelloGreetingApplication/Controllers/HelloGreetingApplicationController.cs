@@ -2,6 +2,7 @@ using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
+using RepositoryLayer.Entity;
 namespace HelloGreetingApplication.Controllers;
 /// <summary>
 /// Class providing API for HelloGreetingg
@@ -21,7 +22,23 @@ public class HelloGreetingApplicationController : ControllerBase
         _greetingBL = greetingBL;
     }
 
-    [HttpGet("custom")]
+
+    [HttpPost("SaveGreeting")]
+
+    public IActionResult SaveGreetings(string message)
+    {
+        var result = _greetingBL.SaveGreetings(message);
+        ResponseModel<UserEntity> responseModel = new ResponseModel<UserEntity>();
+        responseModel.Success = true;
+        responseModel.Message = "Greeting Saved Successfully";
+        responseModel.Data = result;
+        logger.Info($"Greeting saved: {result.Message}");
+        return Ok(responseModel);
+
+
+    }
+
+    [HttpGet("GreetingMessage")]
     public IActionResult GreetingMessage(string? firstName, string? lastName)
     {
         string result = _greetingBL.GetGreeting(firstName, lastName);
@@ -100,5 +117,7 @@ public class HelloGreetingApplicationController : ControllerBase
         logger.Info("Deleted method executed");
         return Ok(responseModel);
     }
+
+
 
 }
