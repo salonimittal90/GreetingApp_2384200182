@@ -22,6 +22,24 @@ public class HelloGreetingApplicationController : ControllerBase
         _greetingBL = greetingBL;
     }
 
+    [HttpPut("UpdateGreeting")]
+    public IActionResult UpdateGreeting(int id, string newMessage)
+    {
+        var result = _greetingBL.UpdateGreeting(id, newMessage);
+
+        if (result == null)
+        {
+            return NotFound(new { Success = false, Message = "Greeting not found!" });
+        }
+
+        logger.Info("Greeting Updated Successfully");
+        return Ok(new
+        {
+            Success = true,
+            Message = "Greeting updated successfully!",
+            Data = result
+        });
+    }
 
     [HttpGet("ShowGreeting")] 
         public IActionResult GetAllGreetings()
