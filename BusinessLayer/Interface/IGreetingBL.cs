@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RepositoryLayer.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,10 @@ namespace BusinessLayer.Interface
     public interface IGreetingBL  
     {
             public string GetGreeting(string? firstName, string? lastName);
+<<<<<<< HEAD
+=======
+            public UserEntity SaveGreetings(string message);
+>>>>>>> UC4
 
     }
 }

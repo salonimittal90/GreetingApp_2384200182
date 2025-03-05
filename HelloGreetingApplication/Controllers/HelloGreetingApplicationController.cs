@@ -2,10 +2,15 @@ using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
+<<<<<<< HEAD
 
 
 namespace HelloGreetingApplication.Controllers;
 
+=======
+using RepositoryLayer.Entity;
+namespace HelloGreetingApplication.Controllers;
+>>>>>>> UC4
 /// <summary>
 /// Class providing API for HelloGreetingg
 /// </summary>
@@ -24,6 +29,7 @@ public class HelloGreetingApplicationController : ControllerBase
         _greetingBL = greetingBL;
     }
 
+<<<<<<< HEAD
     [HttpGet("custom")]
     public IActionResult GreetingMessage(string? firstName, string? lastName)
     {
@@ -36,6 +42,36 @@ public class HelloGreetingApplicationController : ControllerBase
         return Ok(responseModel);
     }
 
+=======
+
+    [HttpPost("SaveGreeting")]
+
+    public IActionResult SaveGreetings(string message)
+    {
+        var result = _greetingBL.SaveGreetings(message);
+        ResponseModel<UserEntity> responseModel = new ResponseModel<UserEntity>();
+        responseModel.Success = true;
+        responseModel.Message = "Greeting Saved Successfully";
+        responseModel.Data = result;
+        logger.Info($"Greeting saved: {result.Message}");
+        return Ok(responseModel);
+
+
+    }
+
+    [HttpGet("GreetingMessage")]
+    public IActionResult GreetingMessage(string? firstName, string? lastName)
+    {
+        string result = _greetingBL.GetGreeting(firstName, lastName);
+        ResponseModel<string> responseModel = new ResponseModel<string>();
+        responseModel.Success = true;
+        responseModel.Message = "Greeting Message Executed";
+        responseModel.Data = result;
+        logger.Info($"Greeting fetched {result}");
+        return Ok(responseModel);
+    }
+
+>>>>>>> UC4
     /// <summary>
     /// Get method to get the Greeting message
     /// </summary>
