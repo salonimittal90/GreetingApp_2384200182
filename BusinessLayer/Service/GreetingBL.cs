@@ -1,28 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using BusinessLayer.Interface;
-<<<<<<< HEAD
-=======
 using RepositoryLayer.Entity;
 using RepositoryLayer.Interface;
->>>>>>> UC4
+
 
 namespace BusinessLayer.Service
 {
     public class GreetingBL : IGreetingBL
     {
-<<<<<<< HEAD
-        public string GetGreeting(string? firstName, string? lastName)
-        {
-=======
+
+
         IGreetingRL _greetingRL;
 
+        // constructor
         public GreetingBL(IGreetingRL greetingRL)
         {
             _greetingRL = greetingRL;
+        }
+
+
+        public UserEntity GetGreetingById(int id)
+        {
+            var result = _greetingRL.GetGreetingById(id);
+            return result;
         }
 
         public UserEntity SaveGreetings(string message)
@@ -33,9 +33,10 @@ namespace BusinessLayer.Service
 
 
 
+
         public string GetGreeting(string? firstName, string? lastName)
         {
->>>>>>> UC4
+
             if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
             {
                 return "Hello " + firstName + " " + lastName;

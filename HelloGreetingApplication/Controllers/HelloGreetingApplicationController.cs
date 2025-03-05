@@ -3,13 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
 using RepositoryLayer.Entity;
-
-
-
-
-
 namespace HelloGreetingApplication.Controllers;
-
 /// <summary>
 /// Class providing API for HelloGreetingg
 /// </summary>
@@ -28,6 +22,25 @@ public class HelloGreetingApplicationController : ControllerBase
         _greetingBL = greetingBL;
     }
 
+
+    [HttpGet("FindGreeting")]
+
+    public IActionResult GetGreetingById(int id)
+    {
+        var result = _greetingBL.GetGreetingById(id);
+        if (result == null)
+        {
+            return NotFound("Greeting not found.");
+        }
+        ResponseModel<UserEntity> responseModel = new ResponseModel<UserEntity>();
+        responseModel.Success = true;
+        responseModel.Message = "Greeting fetched Successfully";
+        responseModel.Data = result;
+        logger.Info($"Greeting fetched: {result.Message}");
+        return Ok(responseModel);
+
+    }
+
     [HttpPost("SaveGreeting")]
 
     public IActionResult SaveGreetings(string message)
@@ -43,7 +56,8 @@ public class HelloGreetingApplicationController : ControllerBase
 
     }
 
-    [HttpGet("Custom")]
+
+    [HttpGet("GreetingMessage")]
     public IActionResult GetGreeting(string? firstName, string? lastName)
     {
         string result = _greetingBL.GetGreeting(firstName, lastName);
@@ -54,7 +68,6 @@ public class HelloGreetingApplicationController : ControllerBase
         logger.Info($"Greeting fetched {result}");
         return Ok(responseModel);
     }
-
 
     /// <summary>
     /// Get method to get the Greeting message
@@ -123,5 +136,6 @@ public class HelloGreetingApplicationController : ControllerBase
         logger.Info("Deleted method executed");
         return Ok(responseModel);
     }
+
 
 }

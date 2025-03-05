@@ -1,4 +1,5 @@
-﻿using RepositoryLayer.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using RepositoryLayer.Context;
 using RepositoryLayer.Entity;
 using RepositoryLayer.Interface;
 using System;
@@ -24,7 +25,14 @@ namespace RepositoryLayer.Service
             _dbContext.SaveChanges();
             return greeting;
         }
-       
+
+        public UserEntity GetGreetingById(int id)
+        {
+            return _dbContext.Greetings.FirstOrDefault(g => g.Id == id);
+        }
+
+
+
     }
 }
 

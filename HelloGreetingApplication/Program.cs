@@ -1,10 +1,8 @@
+
 using BusinessLayer.Interface;
 using BusinessLayer.Service;
-<<<<<<< HEAD
-=======
 using RepositoryLayer.Interface;
 using RepositoryLayer.Service;
->>>>>>> UC4
 using NLog;
 using NLog.Web;
 using Microsoft.EntityFrameworkCore;
@@ -21,14 +19,8 @@ builder.Services.AddScoped<IGreetingRL, GreetingRL>();
 
 builder.Services.AddControllers();
 
-<<<<<<< HEAD
-var logger = LogManager.Setup()
-    .LoadConfigurationFromFile(Path.Combine(Directory.GetCurrentDirectory(), "NLog.config"))
-    .GetCurrentClassLogger();
-// NLog is a .Net logging Library h jo  logs generate karne ke liye use hoti hai.
-=======
 //logger refference Add kiya and GetCurrentClassLogger isse current class ka logger set kiya 
-var logger = LogManager.Setup() 
+var logger = LogManager.Setup()
     .LoadConfigurationFromFile(Path.Combine(Directory.GetCurrentDirectory(), "NLog.config"))
     .GetCurrentClassLogger();
 
@@ -42,7 +34,6 @@ builder.Services.AddDbContext<HelloGreetingContext>(options =>
 
 
 // NLog is a.Net logging Library h jo  logs generate karne ke liye use hoti hai.
->>>>>>> UC4
 // Configure NLog
 builder.Host.UseNLog();
 
