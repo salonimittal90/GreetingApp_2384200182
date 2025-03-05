@@ -185,3 +185,36 @@ SELECT @@ROWCOUNT;
 2025-03-05 15:46:47.5621 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.HelloGreetingApplicationController.UpdateGreeting (HelloGreetingApplication) in 4751.9194ms 
 2025-03-05 15:46:47.5621 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingApplicationController.UpdateGreeting (HelloGreetingApplication)' 
 2025-03-05 15:46:47.5884 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 PUT https://localhost:7188/HelloGreetingApplication/UpdateGreeting?id=3&newMessage=goodnight - 0 - 200 - application/json;+charset=utf-8 4845.4646ms 
+2025-03-05 16:11:27.4659 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7188 
+2025-03-05 16:11:27.5191 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5018 
+2025-03-05 16:11:27.5191 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2025-03-05 16:11:27.5323 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2025-03-05 16:11:27.5323 | INFO | Microsoft.Hosting.Lifetime | Content root path: D:\CGProject\GreetingApp_2384200182\HelloGreetingApplication\ 
+2025-03-05 16:11:28.7796 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.html - - 
+2025-03-05 16:11:29.5099 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.html - - - 200 - text/html;charset=utf-8 756.4763ms 
+2025-03-05 16:11:29.5489 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-05 16:11:29.5653 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.js - - 
+2025-03-05 16:11:29.5653 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_vs/browserLink - - 
+2025-03-05 16:11:29.5803 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.js - - - 200 - application/javascript;charset=utf-8 15.0260ms 
+2025-03-05 16:11:29.5803 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - - 200 12006 application/javascript;+charset=utf-8 36.8083ms 
+2025-03-05 16:11:29.6911 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 113.3251ms 
+2025-03-05 16:11:29.8409 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - 
+2025-03-05 16:11:30.1300 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 289.2223ms 
+2025-03-05 16:11:45.7797 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 DELETE https://localhost:7188/HelloGreetingApplication/DeleteGreeting/2 - - 
+2025-03-05 16:11:45.7940 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingApplicationController.DeleteGreeting (HelloGreetingApplication)' 
+2025-03-05 16:11:45.8294 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "DeleteGreeting", controller = "HelloGreetingApplication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteGreeting(Int32) on controller HelloGreetingApplication.Controllers.HelloGreetingApplicationController (HelloGreetingApplication). 
+2025-03-05 16:11:47.3896 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-05 16:11:49.0042 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (144ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Message]
+FROM [Greetings] AS [g]
+WHERE [g].[Id] = @__id_0 
+2025-03-05 16:11:49.3772 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (24ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Greetings]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT; 
+2025-03-05 16:11:49.4127 | INFO | HelloGreetingApplication.Controllers.HelloGreetingApplicationController | Greeting Deleted Successfully 
+2025-03-05 16:11:49.4127 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-05 16:11:49.4494 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.HelloGreetingApplicationController.DeleteGreeting (HelloGreetingApplication) in 3613.3457ms 
+2025-03-05 16:11:49.4494 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingApplicationController.DeleteGreeting (HelloGreetingApplication)' 
+2025-03-05 16:11:49.4620 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 DELETE https://localhost:7188/HelloGreetingApplication/DeleteGreeting/2 - - - 200 - application/json;+charset=utf-8 3682.3640ms 
