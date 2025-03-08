@@ -24,7 +24,16 @@ public class HelloGreetingApplicationController : ControllerBase
 
 
 
-    [HttpDelete("DeleteGreeting/{id}")]
+    // Custom Exception throw krke dhk rhe h 
+    [HttpGet("TestException")]
+    public IActionResult TestException()
+    {
+        throw new Exception("This is a test exception!");
+    }
+
+
+
+    [HttpDelete("DeleteGreeting")]
     public IActionResult DeleteGreeting(int id)
     {
         var isDeleted = _greetingBL.DeleteGreeting(id);

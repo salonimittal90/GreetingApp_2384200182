@@ -71,7 +71,5 @@ namespace BusinessLayer.Service
             return result;
 
         }
-
-
     }
     }
