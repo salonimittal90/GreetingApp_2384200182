@@ -13,6 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 //isko depedency injection
 builder.Services.AddScoped<IGreetingBL, GreetingBL>();
 builder.Services.AddScoped<IGreetingRL, GreetingRL>();
+builder.Services.AddScoped<IUserBL, UserBL>();  //  Business Layer
+builder.Services.AddScoped<IUserRL, UserRL>();  //  Repository Layer
 
 // Add services to the container.
 
@@ -58,9 +60,9 @@ app.UseHttpsRedirection();
 
 // Middleware ko register krna h 
 app.UseRouting();
-//app.UseMiddleware<GreetingApp.Middleware.ExceptionMiddleware>();
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthorization();
+
 
 //Swagger JSON generate karne ke liye.
 app.UseSwagger();
