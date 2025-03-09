@@ -13,8 +13,8 @@ namespace RepositoryLayer.Interface
        public UserDetailsEntity Register(RegisterModel model);  // Database me user save karega
        public UserDetailsEntity Login(LoginModel model);  // Login ke liye user check karega
 
-        string GeneratePasswordResetToken(string email);
-        bool ResetPassword(ResetPasswordModel model);
+        /*string GeneratePasswordResetToken(string email);
+        bool ResetPassword(ResetPasswordModel model);*/
 
     }
 }

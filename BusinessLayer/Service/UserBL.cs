@@ -26,14 +26,15 @@ namespace BusinessLayer.Service
         }
 
         //  Login API
-        public string Login(LoginModel model)
+        public UserDetailsEntity Login(LoginModel model)
         {
             var user = _userRL.Login(model);
-            return "Login successful!"; 
+
+            return user; 
         }
 
         // ✅ Generate Reset Password Token
-        public string GeneratePasswordResetToken(string email)
+        /*public string GeneratePasswordResetToken(string email)
         {
             return _userRL.GeneratePasswordResetToken(email);
         }
@@ -42,6 +43,6 @@ namespace BusinessLayer.Service
         public bool ResetPassword(ResetPasswordModel model)
         {
             return _userRL.ResetPassword(model);
-        }
+        }*/
     }
     }

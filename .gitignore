@@ -1,3 +1,7 @@
 .vs
 obj/
 bin/
+logs/
+/BusinessLayer/bin/
+/HelloGreetingApplication/bin/
+/RepositoryLayer/bin/

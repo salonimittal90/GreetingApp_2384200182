@@ -11,9 +11,9 @@ namespace BusinessLayer.Interface
     public interface IUserBL
     {
        public UserDetailsEntity Register(RegisterModel model);  // ✅ Register API ke liye
-       public string Login(LoginModel model);  // ✅ Login API ke liye (JWT baad me add hoga)
+       public UserDetailsEntity Login(LoginModel model);  // ✅ Login API ke liye (JWT baad me add hoga)
 
-        string GeneratePasswordResetToken(string email);
-        bool ResetPassword(ResetPasswordModel model);
+       /* string GeneratePasswordResetToken(string email);
+        bool ResetPassword(ResetPasswordModel model);*/
     }
 }

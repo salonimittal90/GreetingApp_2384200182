@@ -19,4 +19,5 @@ namespace RepositoryLayer.Interface
         public bool DeleteGreeting (int id);
 
     }
+
 }
