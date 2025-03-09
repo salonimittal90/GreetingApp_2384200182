@@ -89,7 +89,7 @@ namespace RepositoryLayer.Service
             }
 
 
-        // ✅ Generate Password Reset Token (Simple GUID Token)
+       /* // ✅ Generate Password Reset Token (Simple GUID Token)
         public string GeneratePasswordResetToken(string email)
         {
             var user = _dbContext.UserDetails.FirstOrDefault(u => u.Email == email);
@@ -128,7 +128,7 @@ namespace RepositoryLayer.Service
 
             _dbContext.SaveChanges();
             return true;
-        }
+        }*/
 
         
     }

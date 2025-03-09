@@ -1,229 +1,286 @@
-2025-03-09 19:02:56.6125 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
-2025-03-09 19:04:56.8560 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
-2025-03-09 19:04:57.6954 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT 1 
-2025-03-09 19:04:57.7216 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
-2025-03-09 19:04:57.7254 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT 1 
-2025-03-09 19:04:57.7254 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
-2025-03-09 19:04:57.7534 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [MigrationId], [ProductVersion]
-FROM [__EFMigrationsHistory]
-ORDER BY [MigrationId]; 
-2025-03-09 19:04:57.7747 | INFO | Microsoft.EntityFrameworkCore.Migrations | Applying migration '20250309133256_AddUniqueEmailConstraint'. 
-2025-03-09 19:04:57.8553 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE [UserDetails] (
-    [Id] int NOT NULL IDENTITY,
-    [Name] nvarchar(max) NOT NULL,
-    [Email] nvarchar(450) NOT NULL,
-    [PasswordHash] nvarchar(max) NOT NULL,
-    [Salt] nvarchar(max) NOT NULL,
-    [CreatedAt] datetime2 NOT NULL,
-    [UpdatedAt] datetime2 NOT NULL,
-    CONSTRAINT [PK_UserDetails] PRIMARY KEY ([Id])
-); 
-2025-03-09 19:04:57.8553 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE UNIQUE INDEX [IX_UserDetails_Email] ON [UserDetails] ([Email]); 
-2025-03-09 19:04:57.8730 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20250309133256_AddUniqueEmailConstraint', N'6.0.36'); 
-2025-03-09 19:35:22.8714 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7188 
-2025-03-09 19:35:22.9131 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5018 
-2025-03-09 19:35:22.9131 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
-2025-03-09 19:35:22.9131 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
-2025-03-09 19:35:22.9131 | INFO | Microsoft.Hosting.Lifetime | Content root path: D:\CGProject\GreetingApp_2384200182\HelloGreetingApplication\ 
-2025-03-09 19:35:25.5237 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.html - - 
-2025-03-09 19:35:26.3704 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.html - - - 200 - text/html;charset=utf-8 851.1214ms 
-2025-03-09 19:35:26.4059 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - 
-2025-03-09 19:35:26.4059 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.css - - 
-2025-03-09 19:35:26.4059 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/swagger-ui.css - - 
-2025-03-09 19:35:26.4059 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/swagger-ui-bundle.js - - 
-2025-03-09 19:35:26.4059 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.js - - 
-2025-03-09 19:35:26.4118 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/swagger-ui-standalone-preset.js - - 
-2025-03-09 19:35:26.4118 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.js - - - 200 - application/javascript;charset=utf-8 13.6945ms 
-2025-03-09 19:35:26.4280 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - - 200 12005 application/javascript;+charset=utf-8 22.0845ms 
-2025-03-09 19:35:26.4280 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | The file /index.css was not modified 
-2025-03-09 19:35:26.4280 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | The file /swagger-ui-bundle.js was not modified 
-2025-03-09 19:35:26.4280 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | The file /swagger-ui-standalone-preset.js was not modified 
-2025-03-09 19:35:26.4280 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | The file /swagger-ui.css was not modified 
-2025-03-09 19:35:26.4280 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/swagger-ui.css - - - 304 - text/css 25.8678ms 
-2025-03-09 19:35:26.4280 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/swagger-ui-bundle.js - - - 304 - application/javascript 26.2395ms 
-2025-03-09 19:35:26.4280 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.css - - - 304 - text/css 26.5220ms 
-2025-03-09 19:35:26.4280 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/swagger-ui-standalone-preset.js - - - 304 - application/javascript 20.1729ms 
-2025-03-09 19:35:26.4789 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_vs/browserLink - - 
-2025-03-09 19:35:26.6448 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 165.8935ms 
-2025-03-09 19:35:26.8293 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - 
-2025-03-09 19:35:27.0652 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 235.9408ms 
-2025-03-09 19:36:21.9119 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7188/api/User/register application/json 85 
-2025-03-09 19:36:21.9247 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'ControllerLayer.Controllers.UserController.Register (HelloGreetingApplication)' 
-2025-03-09 19:36:21.9794 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.Model.UserModel.RegisterModel) on controller ControllerLayer.Controllers.UserController (HelloGreetingApplication). 
-2025-03-09 19:36:23.3819 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
-2025-03-09 19:36:24.8148 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (106ms) [Parameters=[@__model_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
-SELECT CASE
-    WHEN EXISTS (
-        SELECT 1
-        FROM [UserDetails] AS [u]
-        WHERE [u].[Email] = @__model_Email_0) THEN CAST(1 AS bit)
-    ELSE CAST(0 AS bit)
-END 
-2025-03-09 19:36:25.1515 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (33ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
-SET NOCOUNT ON;
-INSERT INTO [UserDetails] ([CreatedAt], [Email], [Name], [PasswordHash], [Salt], [UpdatedAt])
-VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
-SELECT [Id]
-FROM [UserDetails]
-WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
-2025-03-09 19:36:25.2160 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[RepositoryLayer.Entity.UserDetailsEntity, RepositoryLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
-2025-03-09 19:36:25.2355 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action ControllerLayer.Controllers.UserController.Register (HelloGreetingApplication) in 3251.2482ms 
-2025-03-09 19:36:25.2355 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'ControllerLayer.Controllers.UserController.Register (HelloGreetingApplication)' 
-2025-03-09 19:36:25.2460 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7188/api/User/register application/json 85 - 200 - application/json;+charset=utf-8 3334.7015ms 
-2025-03-09 19:39:23.9156 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7188/api/User/login application/json 65 
-2025-03-09 19:39:23.9156 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'ControllerLayer.Controllers.UserController.Login (HelloGreetingApplication)' 
-2025-03-09 19:39:23.9156 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.UserModel.LoginModel) on controller ControllerLayer.Controllers.UserController (HelloGreetingApplication). 
-2025-03-09 19:39:23.9803 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
-2025-03-09 19:39:24.0609 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (29ms) [Parameters=[@__model_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
-SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[Salt], [u].[UpdatedAt]
+2025-03-10 00:01:27.3218 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7188/api/User/login application/json 65 
+2025-03-10 00:01:27.5226 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:01:27.5226 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.UserModel.LoginModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-10 00:01:29.6412 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-10 00:01:32.4430 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (194ms) [Parameters=[@__model_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[ResetToken], [u].[ResetTokenExpiry], [u].[Salt], [u].[UpdatedAt]
 FROM [UserDetails] AS [u]
 WHERE [u].[Email] = @__model_Email_0 
-2025-03-09 19:39:24.0836 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[RepositoryLayer.Entity.UserDetailsEntity, RepositoryLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
-2025-03-09 19:39:24.0836 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action ControllerLayer.Controllers.UserController.Login (HelloGreetingApplication) in 163.4966ms 
-2025-03-09 19:39:24.0836 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'ControllerLayer.Controllers.UserController.Login (HelloGreetingApplication)' 
-2025-03-09 19:39:24.0836 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7188/api/User/login application/json 65 - 200 - application/json;+charset=utf-8 169.0643ms 
-2025-03-09 20:13:50.4677 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7188 
-2025-03-09 20:13:50.5103 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5018 
-2025-03-09 20:13:50.5103 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
-2025-03-09 20:13:50.5232 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
-2025-03-09 20:13:50.5232 | INFO | Microsoft.Hosting.Lifetime | Content root path: D:\CGProject\GreetingApp_2384200182\HelloGreetingApplication\ 
-2025-03-09 20:13:51.8187 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.html - - 
-2025-03-09 20:13:52.2980 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.html - - - 200 - text/html;charset=utf-8 482.8859ms 
-2025-03-09 20:13:52.3276 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.js - - 
-2025-03-09 20:13:52.3276 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - 
-2025-03-09 20:13:52.3276 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.js - - - 200 - application/javascript;charset=utf-8 2.7845ms 
-2025-03-09 20:13:52.3355 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - - 200 12005 application/javascript;+charset=utf-8 7.9510ms 
-2025-03-09 20:13:52.3697 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_vs/browserLink - - 
-2025-03-09 20:13:52.4849 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 115.2297ms 
-2025-03-09 20:13:52.7641 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - 
-2025-03-09 20:13:52.9807 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 216.7300ms 
-2025-03-09 20:14:20.5651 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7188/api/User/forgot-password application/json 43 
-2025-03-09 20:14:20.5690 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.ForgotPassword (HelloGreetingApplication)' 
-2025-03-09 20:14:20.6022 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "ForgotPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ForgotPassword(ModelLayer.Model.UserModel.ForgetPasswordModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
-2025-03-09 20:14:21.9420 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
-2025-03-09 20:14:23.4635 | ERROR | Microsoft.EntityFrameworkCore.Database.Command | Failed executing DbCommand (96ms) [Parameters=[@__email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+2025-03-10 00:01:33.1325 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-10 00:01:33.1325 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 5610.6731ms 
+2025-03-10 00:01:33.1325 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:01:33.1554 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7188/api/User/login application/json 65 - 401 - application/json;+charset=utf-8 5836.0975ms 
+2025-03-10 00:02:34.1995 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7188/api/User/login application/json 65 
+2025-03-10 00:02:34.2140 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:02:34.2140 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.UserModel.LoginModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-10 00:02:34.2699 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-10 00:02:34.3123 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (23ms) [Parameters=[@__model_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
 SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[ResetToken], [u].[ResetTokenExpiry], [u].[Salt], [u].[UpdatedAt]
 FROM [UserDetails] AS [u]
-WHERE [u].[Email] = @__email_0 
-2025-03-09 20:14:23.5466 | ERROR | Microsoft.EntityFrameworkCore.Query | An exception occurred while iterating over the results of a query for context type 'RepositoryLayer.Context.HelloGreetingContext'.
-Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ResetToken'.
-Invalid column name 'ResetTokenExpiry'.
-   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
-   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
-   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
-   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
-   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
-ClientConnectionId:86894504-ccdf-4dfb-ae2d-ee5d6521233a
-Error Number:207,State:1,Class:16 Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ResetToken'.
-Invalid column name 'ResetTokenExpiry'.
-   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
-   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
-   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
-   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
-   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
-ClientConnectionId:86894504-ccdf-4dfb-ae2d-ee5d6521233a
-Error Number:207,State:1,Class:16 HelpLink.ProdName: Microsoft SQL Server;HelpLink.ProdVer: 16.00.1135;HelpLink.EvtSrc: MSSQLServer;HelpLink.EvtID: 207;HelpLink.BaseHelpUrl: https://go.microsoft.com/fwlink;HelpLink.LinkId: 20476
-2025-03-09 20:14:23.8896 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
-2025-03-09 20:14:23.9034 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.ForgotPassword (HelloGreetingApplication) in 3295.5556ms 
-2025-03-09 20:14:23.9034 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.ForgotPassword (HelloGreetingApplication)' 
-2025-03-09 20:14:23.9154 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7188/api/User/forgot-password application/json 43 - 400 - application/json;+charset=utf-8 3350.2294ms 
-2025-03-09 20:18:47.9879 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
-2025-03-09 20:18:48.2474 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT 1 
-2025-03-09 20:18:48.2801 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
-2025-03-09 20:18:48.2801 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT 1 
-2025-03-09 20:18:48.2801 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
-2025-03-09 20:18:48.3197 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [MigrationId], [ProductVersion]
-FROM [__EFMigrationsHistory]
-ORDER BY [MigrationId]; 
-2025-03-09 20:18:48.3197 | INFO | Microsoft.EntityFrameworkCore.Migrations | No migrations were applied. The database is already up to date. 
-2025-03-09 20:19:04.5386 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7188 
-2025-03-09 20:19:04.5741 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5018 
-2025-03-09 20:19:04.5741 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
-2025-03-09 20:19:04.5862 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
-2025-03-09 20:19:04.5862 | INFO | Microsoft.Hosting.Lifetime | Content root path: D:\CGProject\GreetingApp_2384200182\HelloGreetingApplication\ 
-2025-03-09 20:19:05.3715 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.html - - 
-2025-03-09 20:19:05.7038 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.html - - - 200 - text/html;charset=utf-8 334.5270ms 
-2025-03-09 20:19:05.7244 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.js - - 
-2025-03-09 20:19:05.7256 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - 
-2025-03-09 20:19:05.7256 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.js - - - 200 - application/javascript;charset=utf-8 2.9243ms 
-2025-03-09 20:19:05.7438 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - - 200 12005 application/javascript;+charset=utf-8 18.1113ms 
-2025-03-09 20:19:05.7797 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_vs/browserLink - - 
-2025-03-09 20:19:05.8577 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 78.0349ms 
-2025-03-09 20:19:06.1855 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - 
-2025-03-09 20:19:06.3610 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 175.4776ms 
-2025-03-09 20:19:38.5988 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7188/api/User/forgot-password application/json 43 
-2025-03-09 20:19:38.6027 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.ForgotPassword (HelloGreetingApplication)' 
-2025-03-09 20:19:38.6385 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "ForgotPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ForgotPassword(ModelLayer.Model.UserModel.ForgetPasswordModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
-2025-03-09 20:19:39.9886 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
-2025-03-09 20:19:41.2855 | ERROR | Microsoft.EntityFrameworkCore.Database.Command | Failed executing DbCommand (82ms) [Parameters=[@__email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+WHERE [u].[Email] = @__model_Email_0 
+2025-03-10 00:02:34.3482 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-10 00:02:34.3523 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 130.79ms 
+2025-03-10 00:02:34.3523 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:02:34.3523 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7188/api/User/login application/json 65 - 200 - application/json;+charset=utf-8 155.1542ms 
+2025-03-10 00:03:04.9289 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7188/api/User/login application/json 65 
+2025-03-10 00:03:04.9289 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:03:04.9289 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.UserModel.LoginModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-10 00:03:05.0422 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-10 00:03:05.0653 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (14ms) [Parameters=[@__model_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
 SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[ResetToken], [u].[ResetTokenExpiry], [u].[Salt], [u].[UpdatedAt]
 FROM [UserDetails] AS [u]
-WHERE [u].[Email] = @__email_0 
-2025-03-09 20:19:41.3680 | ERROR | Microsoft.EntityFrameworkCore.Query | An exception occurred while iterating over the results of a query for context type 'RepositoryLayer.Context.HelloGreetingContext'.
-Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ResetToken'.
-Invalid column name 'ResetTokenExpiry'.
-   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
-   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
-   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
-   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
-   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
-ClientConnectionId:f8703fa1-e72b-47ca-a50c-a4d017255b3f
-Error Number:207,State:1,Class:16 Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ResetToken'.
-Invalid column name 'ResetTokenExpiry'.
-   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
-   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
-   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
-   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
-   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
-ClientConnectionId:f8703fa1-e72b-47ca-a50c-a4d017255b3f
-Error Number:207,State:1,Class:16 HelpLink.ProdName: Microsoft SQL Server;HelpLink.ProdVer: 16.00.1135;HelpLink.EvtSrc: MSSQLServer;HelpLink.EvtID: 207;HelpLink.BaseHelpUrl: https://go.microsoft.com/fwlink;HelpLink.LinkId: 20476
-2025-03-09 20:19:41.4616 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
-2025-03-09 20:19:41.4616 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.ForgotPassword (HelloGreetingApplication) in 2829.036ms 
-2025-03-09 20:19:41.4745 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.ForgotPassword (HelloGreetingApplication)' 
-2025-03-09 20:19:41.4745 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7188/api/User/forgot-password application/json 43 - 400 - application/json;+charset=utf-8 2886.3591ms 
+WHERE [u].[Email] = @__model_Email_0 
+2025-03-10 00:03:05.0975 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-10 00:03:05.0975 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 168.0308ms 
+2025-03-10 00:03:05.0975 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:03:05.0992 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7188/api/User/login application/json 65 - 200 - application/json;+charset=utf-8 170.4117ms 
+2025-03-10 00:04:45.6378 | INFO | Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager | User profile is available. Using 'C:\Users\lenovo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2025-03-10 00:04:46.2398 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7188 
+2025-03-10 00:04:46.2398 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5018 
+2025-03-10 00:04:46.2398 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2025-03-10 00:04:46.2575 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2025-03-10 00:04:46.2575 | INFO | Microsoft.Hosting.Lifetime | Content root path: D:\CGProject\GreetingApp_2384200182\HelloGreetingApplication\ 
+2025-03-10 00:04:47.8699 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.html - - 
+2025-03-10 00:04:48.4388 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.html - - - 200 - text/html;charset=utf-8 577.4140ms 
+2025-03-10 00:04:48.4507 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_vs/browserLink - - 
+2025-03-10 00:04:48.4507 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-10 00:04:48.4507 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.js - - 
+2025-03-10 00:04:48.4507 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.8024ms 
+2025-03-10 00:04:48.5576 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - - 200 12005 application/javascript;+charset=utf-8 106.8886ms 
+2025-03-10 00:04:48.6707 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 220.0839ms 
+2025-03-10 00:04:48.9242 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - 
+2025-03-10 00:04:49.1568 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 232.5626ms 
+2025-03-10 00:05:23.3794 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7188/api/User/login application/json 65 
+2025-03-10 00:05:23.4464 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:05:23.5181 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.UserModel.LoginModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-10 00:05:26.4275 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-10 00:05:29.4610 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (363ms) [Parameters=[@__model_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[ResetToken], [u].[ResetTokenExpiry], [u].[Salt], [u].[UpdatedAt]
+FROM [UserDetails] AS [u]
+WHERE [u].[Email] = @__model_Email_0 
+2025-03-10 00:05:30.0103 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-10 00:05:30.0377 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 6505.0723ms 
+2025-03-10 00:05:30.0377 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:05:30.0622 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7188/api/User/login application/json 65 - 200 - application/json;+charset=utf-8 6682.8799ms 
+2025-03-10 00:10:44.2166 | INFO | Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager | User profile is available. Using 'C:\Users\lenovo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2025-03-10 00:10:44.8723 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7188 
+2025-03-10 00:10:44.8723 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5018 
+2025-03-10 00:10:44.8853 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2025-03-10 00:10:44.8853 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2025-03-10 00:10:44.8853 | INFO | Microsoft.Hosting.Lifetime | Content root path: D:\CGProject\GreetingApp_2384200182\HelloGreetingApplication\ 
+2025-03-10 00:10:46.7465 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.html - - 
+2025-03-10 00:10:47.9516 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.html - - - 200 - text/html;charset=utf-8 1209.2684ms 
+2025-03-10 00:10:47.9907 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-10 00:10:47.9907 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.js - - 
+2025-03-10 00:10:47.9907 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.js - - - 200 - application/javascript;charset=utf-8 7.9722ms 
+2025-03-10 00:10:47.9907 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - - 200 12005 application/javascript;+charset=utf-8 14.1876ms 
+2025-03-10 00:10:48.0376 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_vs/browserLink - - 
+2025-03-10 00:10:48.2062 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 168.7615ms 
+2025-03-10 00:10:48.3998 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - 
+2025-03-10 00:10:48.7542 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 354.3824ms 
+2025-03-10 00:11:25.3494 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7188/api/User/login application/json 65 
+2025-03-10 00:11:25.3684 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:11:25.4783 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.UserModel.LoginModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-10 00:11:28.3285 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-10 00:11:31.3954 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (360ms) [Parameters=[@__model_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[ResetToken], [u].[ResetTokenExpiry], [u].[Salt], [u].[UpdatedAt]
+FROM [UserDetails] AS [u]
+WHERE [u].[Email] = @__model_Email_0 
+2025-03-10 00:11:31.7829 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-10 00:11:31.8064 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 6310.9131ms 
+2025-03-10 00:11:31.8064 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:11:31.8229 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7188/api/User/login application/json 65 - 200 - application/json;+charset=utf-8 6473.4285ms 
+2025-03-10 00:12:55.7664 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/login application/json 68 
+2025-03-10 00:12:55.7664 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint '405 HTTP Method Not Supported' 
+2025-03-10 00:12:55.7720 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint '405 HTTP Method Not Supported' 
+2025-03-10 00:12:55.7720 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/login application/json 68 - 405 0 - 11.6301ms 
+2025-03-10 00:13:00.8792 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/login application/json 68 
+2025-03-10 00:13:00.8792 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint '405 HTTP Method Not Supported' 
+2025-03-10 00:13:00.8792 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint '405 HTTP Method Not Supported' 
+2025-03-10 00:13:00.8792 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/login application/json 68 - 405 0 - 1.5481ms 
+2025-03-10 00:13:15.3219 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 POST https://localhost:7188/api/User/login application/json 68 
+2025-03-10 00:13:15.3219 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:13:15.3219 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.UserModel.LoginModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-10 00:13:15.4271 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-10 00:13:15.4719 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (28ms) [Parameters=[@__model_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[ResetToken], [u].[ResetTokenExpiry], [u].[Salt], [u].[UpdatedAt]
+FROM [UserDetails] AS [u]
+WHERE [u].[Email] = @__model_Email_0 
+2025-03-10 00:13:15.4971 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-10 00:13:15.4971 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 174.1725ms 
+2025-03-10 00:13:15.4971 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:13:15.4971 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 POST https://localhost:7188/api/User/login application/json 68 - 200 - application/json;+charset=utf-8 179.2569ms 
+2025-03-10 00:17:08.6798 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/api/User/protected - - 
+2025-03-10 00:17:08.7803 | INFO | Microsoft.AspNetCore.Authorization.DefaultAuthorizationService | Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-03-10 00:17:08.8147 | INFO | Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler | AuthenticationScheme: Bearer was challenged. 
+2025-03-10 00:17:08.8178 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/api/User/protected - - - 401 0 - 139.6896ms 
+2025-03-10 00:17:26.5326 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/protected
+ application/json 68 
+2025-03-10 00:17:26.7574 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/protected
+ application/json 68 - 404 0 - 224.7943ms 
+2025-03-10 00:17:33.9801 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/protected
+ application/json 68 
+2025-03-10 00:17:33.9801 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/protected
+ application/json 68 - 404 0 - 2.8260ms 
+2025-03-10 00:17:38.2682 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/protected
+ application/json 68 
+2025-03-10 00:17:38.2682 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/protected
+ application/json 68 - 404 0 - 1.1973ms 
+2025-03-10 00:18:10.7954 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - 
+2025-03-10 00:18:10.7954 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - - 404 0 - 1.0219ms 
+2025-03-10 00:18:15.8374 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - 
+2025-03-10 00:18:15.8374 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - - 404 0 - 1.3666ms 
+2025-03-10 00:18:40.7774 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - 
+2025-03-10 00:18:40.8147 | INFO | Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler | Failed to validate the token. System.ArgumentException: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.Text.Json.JsonException: IDX11020: The JSON value of type: 'String', could not be converted to 'JsonTokenType.String'. Reading: 'System.IdentityModel.Tokens.Jwt.JwtPayload.iat', Position: '65', CurrentDepth: '1', BytesConsumed: '86'.
+   at Microsoft.IdentityModel.Tokens.Json.JsonSerializerPrimitives.ReadLong(Utf8JsonReader& reader, String propertyName, String className, Boolean read)
+   at System.IdentityModel.Tokens.Jwt.JwtPayload.CreatePayload(Byte[] bytes, Int32 length)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   --- End of inner exception stack trace ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Decode(String[] tokenParts, String rawData)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ReadJwtToken(String token)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2025-03-10 00:18:40.9915 | INFO | Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler | Bearer was not authenticated. Failure message: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. 
+2025-03-10 00:18:40.9915 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - - 404 0 - 214.9740ms 
+2025-03-10 00:19:09.6429 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - 
+2025-03-10 00:19:09.6514 | INFO | Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler | Failed to validate the token. System.ArgumentException: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.Text.Json.JsonException: IDX11020: The JSON value of type: 'String', could not be converted to 'JsonTokenType.String'. Reading: 'System.IdentityModel.Tokens.Jwt.JwtPayload.iat', Position: '65', CurrentDepth: '1', BytesConsumed: '86'.
+   at Microsoft.IdentityModel.Tokens.Json.JsonSerializerPrimitives.ReadLong(Utf8JsonReader& reader, String propertyName, String className, Boolean read)
+   at System.IdentityModel.Tokens.Jwt.JwtPayload.CreatePayload(Byte[] bytes, Int32 length)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   --- End of inner exception stack trace ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Decode(String[] tokenParts, String rawData)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ReadJwtToken(String token)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2025-03-10 00:19:09.6514 | INFO | Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler | Bearer was not authenticated. Failure message: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. 
+2025-03-10 00:19:09.6514 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - - 404 0 - 9.7431ms 
+2025-03-10 00:19:14.4611 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - 
+2025-03-10 00:19:14.4611 | INFO | Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler | Failed to validate the token. System.ArgumentException: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.Text.Json.JsonException: IDX11020: The JSON value of type: 'String', could not be converted to 'JsonTokenType.String'. Reading: 'System.IdentityModel.Tokens.Jwt.JwtPayload.iat', Position: '65', CurrentDepth: '1', BytesConsumed: '86'.
+   at Microsoft.IdentityModel.Tokens.Json.JsonSerializerPrimitives.ReadLong(Utf8JsonReader& reader, String propertyName, String className, Boolean read)
+   at System.IdentityModel.Tokens.Jwt.JwtPayload.CreatePayload(Byte[] bytes, Int32 length)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   --- End of inner exception stack trace ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.DecodeJws(String payload)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Decode(String[] tokenParts, String rawData)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ReadJwtToken(String token)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2025-03-10 00:19:14.4611 | INFO | Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler | Bearer was not authenticated. Failure message: IDX12723: Unable to decode the payload '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. 
+2025-03-10 00:19:14.4611 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - - 404 0 - 13.9102ms 
+2025-03-10 00:23:23.3295 | INFO | Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager | User profile is available. Using 'C:\Users\lenovo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2025-03-10 00:23:24.2071 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7188 
+2025-03-10 00:23:24.2176 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5018 
+2025-03-10 00:23:24.2357 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2025-03-10 00:23:24.2414 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2025-03-10 00:23:24.2414 | INFO | Microsoft.Hosting.Lifetime | Content root path: D:\CGProject\GreetingApp_2384200182\HelloGreetingApplication\ 
+2025-03-10 00:23:25.8650 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.html - - 
+2025-03-10 00:23:27.0077 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.html - - - 200 - text/html;charset=utf-8 1147.7850ms 
+2025-03-10 00:23:27.9592 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/index.js - - 
+2025-03-10 00:23:28.0198 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/index.js - - - 200 - application/javascript;charset=utf-8 60.5666ms 
+2025-03-10 00:23:28.0437 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-10 00:23:28.0587 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_framework/aspnetcore-browser-refresh.js - - - 200 12005 application/javascript;+charset=utf-8 14.9320ms 
+2025-03-10 00:23:28.0587 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/_vs/browserLink - - 
+2025-03-10 00:23:28.2518 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 187.9780ms 
+2025-03-10 00:23:29.6701 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - 
+2025-03-10 00:23:29.9916 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 321.5872ms 
+2025-03-10 00:24:01.9503 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7188/api/User/login application/json 62 
+2025-03-10 00:24:01.9503 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:24:02.0340 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.UserModel.LoginModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-10 00:24:02.8732 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'. 
+2025-03-10 00:24:02.9017 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 855.8023ms 
+2025-03-10 00:24:02.9017 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:24:02.9017 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7188/api/User/login application/json 62 - 400 - application/problem+json;+charset=utf-8 960.7353ms 
+2025-03-10 00:24:41.9603 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7188/api/User/login application/json 65 
+2025-03-10 00:24:41.9603 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:24:41.9603 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.UserModel.LoginModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-10 00:24:44.1456 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-10 00:24:47.0735 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (235ms) [Parameters=[@__model_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[ResetToken], [u].[ResetTokenExpiry], [u].[Salt], [u].[UpdatedAt]
+FROM [UserDetails] AS [u]
+WHERE [u].[Email] = @__model_Email_0 
+2025-03-10 00:24:47.6070 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-10 00:24:47.6070 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 5645.4183ms 
+2025-03-10 00:24:47.6070 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:24:47.6284 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7188/api/User/login application/json 65 - 200 - application/json;+charset=utf-8 5668.8337ms 
+2025-03-10 00:25:12.1289 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7188/api/User/protected - - 
+2025-03-10 00:25:12.3900 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.GetProtectedData (HelloGreetingApplication)' 
+2025-03-10 00:25:12.3900 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetProtectedData", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProtectedData() on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-10 00:25:12.4025 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-10 00:25:12.4025 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.GetProtectedData (HelloGreetingApplication) in 10.5467ms 
+2025-03-10 00:25:12.4025 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.GetProtectedData (HelloGreetingApplication)' 
+2025-03-10 00:25:12.4025 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7188/api/User/protected - - - 200 - application/json;+charset=utf-8 276.6814ms 
+2025-03-10 00:26:17.1760 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - 
+2025-03-10 00:26:17.1858 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - - 404 0 - 9.7413ms 
+2025-03-10 00:26:24.7926 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - 
+2025-03-10 00:26:24.7926 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - - 404 0 - 2.4772ms 
+2025-03-10 00:26:28.7097 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - 
+2025-03-10 00:26:28.7097 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - - 404 0 - 2.0037ms 
+2025-03-10 00:26:43.8330 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - 
+2025-03-10 00:26:43.8351 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/protected
+ - - - 404 0 - 2.0748ms 
+2025-03-10 00:27:34.4556 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 POST https://localhost:7188/api/User/login
+ application/json 68 
+2025-03-10 00:27:34.4556 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 POST https://localhost:7188/api/User/login
+ application/json 68 - 404 0 - 1.7093ms 
+2025-03-10 00:27:40.5911 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 POST https://localhost:7188/api/User/login
+ application/json 68 
+2025-03-10 00:27:40.5911 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 POST https://localhost:7188/api/User/login
+ application/json 68 - 404 0 - 0.9624ms 
+2025-03-10 00:27:47.1595 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 POST https://localhost:7188/api/User/login
+ application/json 68 
+2025-03-10 00:27:47.1631 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 POST https://localhost:7188/api/User/login
+ application/json 68 - 404 0 - 3.5507ms 
+2025-03-10 00:27:55.4118 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 POST https://localhost:7188/api/User/login application/json 68 
+2025-03-10 00:27:55.4125 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:27:55.4125 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.UserModel.LoginModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-10 00:27:55.4739 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'HelloGreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-10 00:27:55.5205 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (27ms) [Parameters=[@__model_Email_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[ResetToken], [u].[ResetTokenExpiry], [u].[Salt], [u].[UpdatedAt]
+FROM [UserDetails] AS [u]
+WHERE [u].[Email] = @__model_Email_0 
+2025-03-10 00:27:55.5513 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-10 00:27:55.5533 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 139.9535ms 
+2025-03-10 00:27:55.5533 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' 
+2025-03-10 00:27:55.5533 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 POST https://localhost:7188/api/User/login application/json 68 - 200 - application/json;+charset=utf-8 142.2755ms 
+2025-03-10 00:30:02.4273 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/1.1 GET https://localhost:7188/api/User/protected - - 
+2025-03-10 00:30:02.4299 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.GetProtectedData (HelloGreetingApplication)' 
+2025-03-10 00:30:02.4299 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetProtectedData", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProtectedData() on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). 
+2025-03-10 00:30:02.4299 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-10 00:30:02.4299 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.UserController.GetProtectedData (HelloGreetingApplication) in 1.6216ms 
+2025-03-10 00:30:02.4299 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.GetProtectedData (HelloGreetingApplication)' 
+2025-03-10 00:30:02.4299 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/1.1 GET https://localhost:7188/api/User/protected - - - 200 - application/json;+charset=utf-8 8.4675ms 
